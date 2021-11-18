@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Julieth Viviana/CLionProjects/TrabajoColaborativo/main.c
+C:/Users/Samsung/CLionProjects/TrabajoCola/main.c
 stdio.h
 -
 stdlib.h
 -
 ctype.h
+-
+string.h
 -
 

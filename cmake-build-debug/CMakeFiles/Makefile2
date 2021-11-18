@@ -53,10 +53,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Julieth Viviana\CLionProjects\TrabajoColaborativo"
+CMAKE_SOURCE_DIR = C:\Users\Samsung\CLionProjects\TrabajoCola
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Julieth Viviana\CLionProjects\TrabajoColaborativo\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\Samsung\CLionProjects\TrabajoCola\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/TrabajoColaborativo.dir/clean
 CMakeFiles/TrabajoColaborativo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TrabajoColaborativo.dir\build.make CMakeFiles/TrabajoColaborativo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TrabajoColaborativo.dir\build.make CMakeFiles/TrabajoColaborativo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Julieth Viviana\CLionProjects\TrabajoColaborativo\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target TrabajoColaborativo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Samsung\CLionProjects\TrabajoCola\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target TrabajoColaborativo"
 .PHONY : CMakeFiles/TrabajoColaborativo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TrabajoColaborativo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Julieth Viviana\CLionProjects\TrabajoColaborativo\cmake-build-debug\CMakeFiles" 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samsung\CLionProjects\TrabajoCola\cmake-build-debug\CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/TrabajoColaborativo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Julieth Viviana\CLionProjects\TrabajoColaborativo\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Samsung\CLionProjects\TrabajoCola\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/TrabajoColaborativo.dir/rule
 
 # Convenience name for target.
