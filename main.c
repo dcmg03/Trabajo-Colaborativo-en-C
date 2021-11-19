@@ -1,17 +1,35 @@
-#include <stdio.h>
+#include<stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
 
-char firstLetter(char text[]) {
-
-    for (int i = 0; text[i] != '\0'; ++i) {
-        text[i] = toupper(text[i]);
+void firstLetter (char cadena[]){
+    char *p = cadena;
+    while (*p != 0) {
+        if (p == cadena || (*p != ' ' && *(p - 1) == ' '))
+            if (*p >= 'a' && *p <= 'z')
+                *p = *p - ('a' - 'A');
+        p++;
     }
-    return text;
+    printf("\n Su cadena convertida es: %s ", cadena);
+}
 
+void llenarCaracter(char cadena[], char caracter[], int cant, int op){
+    if (op == 1){
+        for (int i = 0; i < cant; i++) {
+            strcat(cadena,caracter);
+        }
+        printf("La cadena es: %s\n", cadena);
 
+    }if (op == 2){
+        char *cadena1 = caracter;
+        for (int i = 0; i < cant-1; i++) {
+            strcat(cadena1,cadena1);
+        }
+        strcat(cadena1, cadena);
+        printf("La cadena es: %s\n", cadena1);
+    }
 }
 
 
@@ -103,8 +121,9 @@ void removerCaracteres(char *cadena, char *caracteres) {
     cadena[indiceCadenaLimpia] = 0;
 }
 
-
-
+int mailValidation (char email[]){
+    return strchr (email, '@') && strchr(email, '.');
+}
 
 void menu() {
     int opc;
@@ -130,11 +149,11 @@ void menu() {
 
         switch (opc) {
             case 1: {
-                printf("Ingrese los caracteres a convertir en mayuscula\n");
+                char cadena [100];
+                printf("Ingrese cadena \n");
                 fflush(stdin);
-                fgets(text, 50, stdin);
-                firstLetter(text);
-
+                fgets(cadena, 200, stdin);
+                firstLetter(cadena);
             }
                 break;
             case 2: {
@@ -166,8 +185,19 @@ void menu() {
 
 
             case 5: {
-
-
+                char cadena[100];
+                char caracter[100];
+                int cant, op;
+                printf("Ingrese cadena\n");
+                scanf("%s",&cadena);
+                printf("Ingrese caracter \n");
+                scanf("%s",&caracter);
+                printf("Cantidad de veces a llenar\n");
+                scanf("%d",&cant);
+                printf("1. Derecha \n");
+                printf("2. Izquierda \n");
+                scanf("%d",&op);
+                llenarCaracter(cadena,caracter,cant, op);
                 break;
             }
             case 6: {
@@ -199,10 +229,11 @@ void menu() {
             }
                 break;
             case 10: {
-                char mail[] = "";
-                printf("Digite eMail a verificar");
-                scanf("%s", mail);
-
+                fflush(stdin);
+                printf("Digite eMail a verificar\n");
+                fgets(&text, 100, stdin);
+                printf("El mail %s es: %s", text, mailValidation(text) ? "VALIDO" : "INVALIDO");
+                printf("\n");
             }
                 break;
             case 11: {
