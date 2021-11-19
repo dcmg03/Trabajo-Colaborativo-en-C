@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <intrin.h>
+
 
 
 void firstLetter (char cadena[]){
@@ -125,6 +127,31 @@ int mailValidation (char email[]){
     return strchr (email, '@') && strchr(email, '.');
 }
 
+char *cadena(){
+
+    return "";
+}
+
+void eliminarRepetidos(char resultado[80], char letra[80]){
+    int i = 0, j = 0;
+    while(letra[i]){
+        if(!strchr(resultado,letra[i]))
+            resultado[j++]=letra[i];
+        i++;
+    }
+    printf("La cadena sin repetir caracteres es: %s \n", resultado);
+}
+void nuevoAnio(int hora, int min){
+    int restanteH, restanteMin, total;
+
+    restanteH = (23- hora)*60;
+    restanteMin = 60-min;
+
+    total = restanteH + restanteMin;
+
+    printf("\nFaltan %d minuto(s) para las 12:00am\n", total);
+}
+
 void menu() {
     int opc;
 
@@ -181,25 +208,36 @@ void menu() {
             }
                 break;
 
-            case 4:
+            case 4: {
+                int hora, min;
 
+                printf("Digite la hora en el formato militar: HH -> ");
+                scanf("%d", &hora);
 
+                printf("Y los minutos : MM ->");
+                scanf("%d", &min);
+
+                printf("Usted ha digitado la hora -> %d : %d", hora, min);
+                nuevoAnio(hora, min);
+            }
+            break;
             case 5: {
                 char cadena[100];
                 char caracter[100];
                 int cant, op;
                 printf("Ingrese cadena\n");
-                scanf("%s",&cadena);
+                scanf("%s", &cadena);
                 printf("Ingrese caracter \n");
-                scanf("%s",&caracter);
+                scanf("%s", &caracter);
                 printf("Cantidad de veces a llenar\n");
-                scanf("%d",&cant);
+                scanf("%d", &cant);
                 printf("1. Derecha \n");
                 printf("2. Izquierda \n");
-                scanf("%d",&op);
-                llenarCaracter(cadena,caracter,cant, op);
-                break;
+                scanf("%d", &op);
+                llenarCaracter(cadena, caracter, cant, op);
             }
+            break;
+
             case 6: {
                 char cadena[100];
                 char caracteres [100];
@@ -221,7 +259,12 @@ void menu() {
             }
                 break;
             case 8: {
+                char resultado[100] = "";
+                char letra[100];
 
+                printf("Ingresa una frase ->   ");
+                scanf("%s",letra);
+                eliminarRepetidos(resultado, letra);
             }
                 break;
             case 9: {
