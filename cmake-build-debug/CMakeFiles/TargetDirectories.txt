@@ -1,3 +1,0 @@
-C:/Users/Julieth Viviana/CLionProjects/Trabajo-Colaborativo-en-C/cmake-build-debug/CMakeFiles/TrabajoColaborativo.dir
-C:/Users/Julieth Viviana/CLionProjects/Trabajo-Colaborativo-en-C/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Julieth Viviana/CLionProjects/Trabajo-Colaborativo-en-C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
