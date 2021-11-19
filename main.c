@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include <intrin.h>
+
 
 
 
@@ -72,29 +72,7 @@ int contarVocales(char *cadena)
     return contador;
 }
 
-int buscarPalabra(char *cadena, char *buscar)
-{
-    char copy[] = "";
-    strcat(copy, cadena);
-    printf("%c", copy);
-    /*int contador = 0;
-    for (size_t i = 0; cadena[i] != '\0'; i++)
-    {
-        int cont2 = 0;
-        for (size_t j = 0; buscar[j] != '\0'; j++)
-        {
-            if (tolower(cadena[i + cont2]) == tolower(buscar[j]))
-            {
-                cont2++;
-                if (cont2 == strlen(buscar))
-                {
-                    contador++;
-                }
-            }
-        }
-    }
-    return contador;*/
-}
+
 void removerCaracteres(char *cadena, char *caracteres) {
     int indiceCadena = 0, indiceCadenaLimpia = 0;
     int deberiaAgregarCaracter = 1;
@@ -155,7 +133,7 @@ void nuevoAnio(int hora, int min){
 void menu() {
     int opc;
 
-    while (opc != 11) {
+    while (opc != 10) {
         printf("*****MENU PRINCIPAL*****\n"
                "1. Convertir en nombre propio\n"
                "2. Buscar cadena\n"
@@ -165,9 +143,8 @@ void menu() {
                "6. Borrar caractertes\n"
                "7. Interseccion\n"
                "8. Eliminar repetidos\n"
-               "9. Contar palabras\n"
-               "10. Validar eMail\n"
-               "11. Salida\n"
+               "9. Validar eMail\n"
+               "10. Salida\n"
                "***************************\n");
         scanf("%d", &opc);
         fflush(stdin);
@@ -267,11 +244,8 @@ void menu() {
                 eliminarRepetidos(resultado, letra);
             }
                 break;
-            case 9: {
 
-            }
-                break;
-            case 10: {
+            case 9: {
                 fflush(stdin);
                 printf("Digite eMail a verificar\n");
                 fgets(&text, 100, stdin);
@@ -279,7 +253,7 @@ void menu() {
                 printf("\n");
             }
                 break;
-            case 11: {
+            case 10: {
                 printf("*****Bye, thanks*****");
                 exit(0);
             }
