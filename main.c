@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-
+#include <intrin.h>
 
 
 
@@ -130,6 +130,49 @@ void nuevoAnio(int hora, int min){
     printf("\nFaltan %d minuto(s) para las 12:00am\n", total);
 }
 
+void interseccion(){
+    fflush(stdin);
+    char cadena1[100];
+    char cadena2[100];
+    char cadenaTotal[100];
+    int contador;
+    int contadorArreglo = 0;
+    int contadorAuxiliar = 0;
+
+    printf("Digite la cadena 1: ");
+    fgets(cadena1, 100, stdin);
+
+    fflush(stdin);
+    printf("Digite la cadena 2: ");
+    fgets(cadena2, 100, stdin);
+    fflush(stdin);
+
+    for (int i = 0; i < strlen(cadena1); ++i) {
+
+        for (int j = 0; j < strlen(cadena2); ++j) {
+            if (tolower(cadena1[i]) == tolower(cadena2[j])) {
+                contador = 0;
+                for (int k = 0; k < contadorAuxiliar; ++k) {
+                    if (tolower(cadena1[i]) == tolower(cadenaTotal[k])) {
+                        contador++;
+                    }
+
+                }
+
+                if (contador == 0) {
+                    cadenaTotal[contadorArreglo]=cadena1[i];
+                    //strcat(cadenaTotal, cadena1[i]);
+                    printf("%c", cadenaTotal[contadorArreglo]);
+                    contadorArreglo++;
+                    contadorAuxiliar++;
+                }
+
+            }
+        }
+    }
+}
+
+
 void menu() {
     int opc;
 
@@ -186,13 +229,11 @@ void menu() {
                 break;
 
             case 4: {
+                printf("Digite la hora en el formato militar -> HH:MM ->");
                 int hora, min;
+                char puntos;
+                scanf("%d" "%c" "%d", &hora, &puntos, &min);
 
-                printf("Digite la hora en el formato militar: HH -> ");
-                scanf("%d", &hora);
-
-                printf("Y los minutos : MM ->");
-                scanf("%d", &min);
 
                 printf("Usted ha digitado la hora -> %d : %d", hora, min);
                 nuevoAnio(hora, min);
@@ -232,7 +273,8 @@ void menu() {
             }
                 break;
             case 7: {
-
+                fflush(stdin);
+                interseccion();
             }
                 break;
             case 8: {
